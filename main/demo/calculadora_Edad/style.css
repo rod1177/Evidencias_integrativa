@@ -1,0 +1,83 @@
+*{
+  overflow-y: hidden;
+
+}
+
+.regresar{
+  background: none;
+  display: flex;
+  position: relative;
+  top: -420px;
+  right: -650px;
+}
+
+.boton_regresar{
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background: #b8e0ea;
+}
+
+.boton_regresar:hover{
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: wheat;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+
+
+.cal_Edad {
+  background-color: white;
+  width: 280px;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 30px;
+  text-align: center;
+}
+
+input {
+  width: 70px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #b8e0ea;
+  border: 1px solid gray;
+  height: 25px;
+  
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+}
+
+.fila2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+hr {
+  margin: 10px 0;
+}
