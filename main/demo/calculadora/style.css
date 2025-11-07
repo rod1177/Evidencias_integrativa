@@ -1,7 +1,7 @@
 .regresar {
   position: fixed;         
-  top: 20px;            
-  right: 20px;             
+  top: 1vh;            
+  right: 1vh;             
   background: #241e20;
   width: 200px;
   font-weight: bold;
@@ -21,7 +21,6 @@
   justify-content: center;
   align-items: center;
   transition: 0.3s ease;
-  cursor: pointer;
 }
 
 .regresar:hover {
@@ -31,9 +30,6 @@
 
 
 body {
-  position: fixed;
-  top: 50px;
-  left: 550px;
   background: #565353;
   display: flex;
   flex-direction: column;
@@ -43,13 +39,14 @@ body {
 }
 
 .calculadora {
+  position: fixed;
+  top: 15vh;
   background-color: #241e20  ;
   padding: 6px;
   border-radius: 8px;
   width: 380px;
   height: 480px;
   text-align: center;
-  margin-top: 10%;
 }
 
 #displayBox {
@@ -70,7 +67,7 @@ body {
 .fila {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1  px;
+  gap: 1px;
 }
 
 button {
@@ -90,6 +87,7 @@ button {
 
 .boton_Borrar{
   background-color: #362e32;
+  font-size: 48px;
 }
 
 .boton_Numero{
@@ -120,5 +118,92 @@ button {
 .boton_Numero:hover,
 .boton_Resultado:hover {
   filter: brightness(1.2);
+  cursor: pointer;
 }
 
+
+@media (min-width: 2559px){
+  .calculadora{
+      position: fixed;
+      top: 20vh;
+      width: 780px;
+      height: 940px;
+      border-radius: 15px;
+    }
+    #displayBox {
+    width: 705px;
+    height: 140px;
+    background-color: transparent;
+    color: white;
+    font-size: 80px;
+    text-align: right;
+    margin-bottom: 5px;
+    border: none;
+    caret-color: black;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  button {
+  height: 128px;
+  border: none;
+  margin: 2px;
+  font-size: 45px;
+  border-radius: 8px;
+  }
+
+  .regresar{
+    width: 340px;
+  }
+
+  .fila:first-of-type button:nth-child(3) {
+    font-size: 45px;
+  }
+
+  .boton_Accion:hover,
+.boton_Borrar:hover,
+.boton_Numero:hover,
+.boton_Resultado:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+}
+
+@media (max-width: 768px){
+  .regresar{
+    position: fixed;
+    top: 1vh;
+    right: 1vh;
+  }
+}
+
+@media (max-width: 426px){
+  .calculadora{
+    width: 340px;
+    height: 480px;
+  }
+  .regresar{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+
+  #displayBox{
+    width: 320px;
+  }
+}
+
+@media (max-width: 320px){
+
+  .regresar{
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .calculadora{
+    width: 280px;
+  }
+}
