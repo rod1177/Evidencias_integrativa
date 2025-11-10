@@ -2,13 +2,14 @@
     background: none;
     display: flex;
     position: fixed;
-    top: 20px;
-    right: 130px;
+    top: 1vh;
+    right: 16vh;
 }
 
 .boton_regresar:hover{
     cursor: pointer;
-    filter: brightness(1.5);}
+    filter: brightness(1.5);
+}
 
 .boton_regresar{
     width: 150px;
@@ -18,8 +19,6 @@
     border-radius: 10px;
     border: none;
 }
-
-
 
 body {
     margin: 0;
@@ -44,7 +43,7 @@ body {
     justify-content: center;
     background: linear-gradient(180deg, #222, #111);
     box-shadow: inset 0 0 10px #ffcc00;
-    letter-spacing: 5px;
+    letter-spacing: 7px;
     font-size: 30px;
 }
 
@@ -66,7 +65,7 @@ body {
 
 header {
     position: absolute;
-    top: 10px;
+    top: 1px;
     text-align: center;
 }
 
@@ -91,7 +90,7 @@ h1 {
     height: 540px;
 }
 
-.dado {
+ .dado{
     perspective: 1100px;
     height: 200px;
 }
@@ -228,8 +227,6 @@ input:hover {
     animation: fireworks 2s ease-in-out infinite;
     position:absolute;
     left: 43%;
-    
-
 }
 
 .mensaje.perder {
@@ -307,4 +304,183 @@ input:hover {
 #alerta_btn:hover {
     background: #ffd633;
     transform: scale(1.05);
+}
+
+@media (min-width: 2559px){
+    .mesa{
+        width: 1200px;
+        height: 1000px;
+        background-image: url(./img/mesa.webp);
+        background-size: 2000px;
+    }
+}
+
+@media (max-width:1024px){
+    .mesa{
+        position: fixed;
+        top: 2vh;
+        left: 35vh;
+        width: 470px;
+        height: 470px;
+    }
+
+    .barra{
+        width: 100px;
+        font-size: 25px;
+    }
+
+    h1{
+        position: fixed;
+        top: 2.5vh;
+        left: 34.5vh;
+        font-size: 48px;
+    }
+
+    .regresar{
+        position: fixed;
+        top: 1vh;
+    }
+
+    .boton_regresar{
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .boton_Num{
+        width: 43px;
+        height: 43px;
+    }
+
+    input{
+        width: 20px;
+        height: 15px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:768px){
+    .mesa{
+        position: fixed;
+        top: 2vh;
+        left: 20vh;
+        width: 400px;
+        height: 450px;
+    }
+
+    .barra{
+        width: 70px;
+        font-size: 25px;
+    }
+
+    h1{
+        position: fixed;
+        top: 4vh;
+        left: 21.5vh;
+        font-size: 40px;
+    }
+
+    .regresar{
+        position: fixed;
+        top: 1vh;
+        right: 12vh;
+    }
+    
+    .boton_regresar{
+        width: 130px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .boton_Num{
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    input[type=number] {
+        width: 20px;
+        height: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .tirar_Dado{
+        margin-left: 20px;
+        padding: 10px 15px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    .mensaje{
+        font-size: 27px;
+    }
+
+    .mensaje.perder{
+        position: fixed;
+        left: 25vh;
+    }
+
+    .mensaje.ganar{
+        position: fixed;
+        left: 45vh;
+    }
+}
+
+@media (max-width:426px){
+    .barra_izquierda, .barra_derecha{
+        display: none;
+    }
+
+    body{
+        overflow: auto;
+        padding: 10px;
+    }
+    
+    .mesa{
+        position: fixed;
+        top: 5vh;
+        left: 33vh;
+        transform: translateX(-50%);
+        width: 350px;
+        height: auto;
+        padding: 25px;
+        height: 450px;
+    }
+
+    h1{
+        font-size: 1.8em;
+        margin-top: 5px;
+    }
+
+    .boton_regresar{
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .dado{
+        height: 200px;
+    }
+
+
+    .boton_Num{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    input[type=number] {
+        width: 50px;
+        font-size: 16px;
+    }
+
+    .tirar_Dado{
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .mensaje{
+        font-size: 22px;
+    }
 }
