@@ -216,6 +216,14 @@ input:hover {
     background: rgb(255, 183, 2);
 }
 
+.dinero_apuesta{
+    font-size: 25px;
+}
+
+.dinero_restante{
+    font-size: 35px;
+}
+
 .mensaje {
     font-size: 30px;
     font-weight: bold;
@@ -225,14 +233,17 @@ input:hover {
 .mensaje.ganar {
     color: gold;
     animation: fireworks 2s ease-in-out infinite;
-    position:absolute;
-    left: 43%;
+    position:fixed;
+    top: 47vh;
+    left: 40%;
+    font-size: 40px;
 }
 
 .mensaje.perder {
     color: red;
     animation: flash 1s infinite;
     position: absolute;
+    left: 34%;
 }
 
 @keyframes flash {
@@ -279,7 +290,6 @@ input:hover {
     color: white;
     font-size: 1.5em;
     box-shadow: 0 0 25px gold;
-    max-width: 400px;
     animation: pop 0.3s ease;
 }
 
@@ -308,10 +318,167 @@ input:hover {
 
 @media (min-width: 2559px){
     .mesa{
+        margin-top: 200px;
         width: 1200px;
-        height: 1000px;
+        height: 1200px;
         background-image: url(./img/mesa.webp);
-        background-size: 2000px;
+        background-size: 2200px;
+    }
+
+    .barra{
+        width: 230px;
+        font-size: 70px;
+        letter-spacing: 30px;
+    }
+
+    h1{
+        position: fixed;
+        top: 2vh;
+        left: 33.6vh;
+        font-size: 120px;
+    }
+
+    h2{
+        font-size: 60px;
+    }
+
+    .boton_regresar{
+        width: 300px;
+        height: 100px;
+        font-size: 35px;
+    }
+
+    .boton_Num{
+        width: 100px;
+        height: 100px;
+        font-size: 55px;
+    }
+    
+    .controles{
+        position: fixed;
+        top: 50vh;
+        left: 50vh;
+    }
+
+    input{
+        width: 100px;
+        height: 100px;
+
+    }
+
+    #apuesta{
+        width: 120px;
+        font-size: 70px;
+    }
+    
+    .tirar_Dado{
+        width: 400px;
+        height: 170px;
+        font-size: 50px;
+        margin-left: 200px;
+        border-radius: 50px;
+    }
+
+    .dinero_restante{
+        font-size: 60px;
+    }
+    .dinero_apuesta{
+        font-size: 60px;
+    }
+
+    .seccion_apuesta{
+        position: fixed;
+        top: 71vh;
+        left: 47vh;
+    }
+
+    .dinero_restante{
+        position: fixed;
+        top: 80vh;
+        left: 59vh;
+    }
+
+
+
+     .dado {
+        perspective: 2200px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .caras_dado {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        transition: transform 1.2s ease-in-out;
+        transform: rotateX(0deg) rotateY(0deg);
+        margin: auto;
+    }
+
+    .cara {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle at center, #fff 80%, #ddd);
+        border: 5px solid #333;
+        border-radius: 25px;
+        box-shadow: inset 0 0 25px #0007, 0 0 15px #000;
+    }
+
+    .cara.uno   { transform: rotateY(0deg) translateZ(150px); }
+    .cara.dos   { transform: rotateY(90deg) translateZ(150px); }
+    .cara.tres  { transform: rotateY(180deg) translateZ(150px); }
+    .cara.cuatro{ transform: rotateY(-90deg) translateZ(150px); }
+    .cara.cinco { transform: rotateX(90deg) translateZ(150px); }
+    .cara.seis  { transform: rotateX(-90deg) translateZ(150px); }
+
+    .punto {
+        width: 45px;
+        height: 45px;
+        background: radial-gradient(circle, #000 60%, #222);
+        border-radius: 50%;
+        box-shadow: 0 0 10px #000a;
+    }
+
+    .centro { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .arriba_izq { top: 20%; left: 20%; }
+    .arriba_der { top: 20%; right: 20%; }
+    .medio_izq { top: 50%; left: 20%; transform: translateY(-50%); }
+    .medio_der { top: 50%; right: 20%; transform: translateY(-50%); }
+    .abajo_izq { bottom: 20%; left: 20%; }
+    .abajo_der { bottom: 20%; right: 20%; }
+
+    @keyframes rotarDado {
+        0%   { transform: rotateX(0deg) rotateY(0deg); }
+        25%  { transform: rotateX(90deg) rotateY(0deg); }
+        50%  { transform: rotateX(90deg) rotateY(90deg); }
+        75%  { transform: rotateX(180deg) rotateY(90deg); }
+        100% { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+
+    .mensaje.perder{
+        position: fixed;
+        top: 48vh;
+        left: 41.5vh;
+        font-size: 75px;
+    }
+
+    .mensaje.ganar{
+        position: fixed;
+        top: 48vh;
+        left: 63vh;
+        font-size: 75px;
+    }
+
+    .alerta_contenido{
+        width: 900px;
+        height: 400px;
+        font-size: 70px;
     }
 }
 
@@ -357,6 +524,32 @@ input:hover {
         height: 15px;
         margin-top: 10px;
     }
+
+    .mensaje.ganar{
+        font-size: 40px;
+        position: fixed;
+        top: 52vh;
+        left: 57vh;
+    }
+
+    .mensaje.perder{
+        position: fixed;
+        left: 42vh;
+    }
+
+    .tirar_Dado{
+        margin-left: 10px;
+    }
+
+    .dinero_restante{
+        font-size: 30px;
+        position: fixed;
+        top: 85vh;
+        left: 54.5vh;
+    }
+
+ 
+
 }
 
 @media (max-width:768px){
@@ -423,7 +616,15 @@ input:hover {
 
     .mensaje.ganar{
         position: fixed;
-        left: 45vh;
+        left: 40vh;
+        top: 53vh;
+        font-size: 35px
+    }
+
+    .dinero_restante{
+        position: fixed;
+        top: 81vh;
+        left: 34vh;
     }
 }
 
@@ -439,18 +640,19 @@ input:hover {
     
     .mesa{
         position: fixed;
-        top: 5vh;
+        top: 4vh;
         left: 33vh;
         transform: translateX(-50%);
-        width: 350px;
+        width: 300px;
         height: auto;
-        padding: 25px;
-        height: 450px;
+        height: 440px;
     }
 
     h1{
+        position: fixed;
         font-size: 1.8em;
-        margin-top: 5px;
+        top: 5vh;
+        left: 5vh;
     }
 
     .boton_regresar{
@@ -459,10 +661,21 @@ input:hover {
         font-size: 14px;
     }
 
-    .dado{
-        height: 200px;
+    .regresar{
+        position: fixed;
+        top: 1vh;
+        right: 1vh;
     }
 
+    .dado{
+        height: 180px;
+    }
+
+    h1{
+        position: fixed;
+        top: 7vh;
+        font-size: 30px;
+    }
 
     .boton_Num{
         width: 35px;
@@ -470,17 +683,165 @@ input:hover {
         font-size: 14px;
     }
 
-    input[type=number] {
-        width: 50px;
-        font-size: 16px;
-    }
-
     .tirar_Dado{
         padding: 10px 15px;
         font-size: 15px;
+        margin-left: 1px;
     }
 
     .mensaje{
         font-size: 22px;
     }
+
+    .mensaje{
+        font-size: 25px;
+    }
+
+    .mensaje.ganar{
+        position: fixed;
+        left: 15vh;
+        top: 33vh;
+        font-size: 30px;
+    }
+
+    .mensaje.perder{
+        position: fixed;
+        left: 1vh;
+        top: 31vh;
+        font-size: 24px;
+
+    }.seccion_apuesta{
+        width: 350px;
+        position: fixed;
+        left: 4vh;
+    }
+
+    .dinero_restante{
+        position: fixed;
+        top: 63vh;
+        left: 5vh;
+    }
+}
+
+@media (max-width:376px){
+    
+    .mesa{
+        width: 265px;
+        position: fixed;
+        left: 29.2vh;
+    }
+
+    .boton_regresar{
+        width: 110px;
+        height: 30px;
+    }
+
+    h1{
+        position: fixed;
+        top: 2.5vh;
+        left: 9vh;
+        width: 250px;
+        font-size: 34px;
+    }
+
+
+    .seccion_apuesta{
+        position: fixed;
+        top: 58vh;
+        left: 5vh;
+        width: 300px;
+    }
+
+    .dinero_restante{
+        position: fixed;
+        top: 65vh;
+        left: 7.5vh;
+    }
+
+    .tirar_Dado{
+        margin-left: 20px;
+    }
+
+    .mensaje.perder{
+        font-size: 22px;
+    }
+
+    .mensaje.ganar{
+        font-size: 30px;
+        position: fixed;
+        left: 12vh;
+    }
+
+    .seccion_apuesta{
+        position: fixed;
+        left: 1.8vh;
+        width: 340px;
+    }
+
+    .dinero_restante{
+        position: fixed;
+        left: 7vh;
+        font-size: 25px;
+    }
+}
+
+@media (max-width:320px){
+    .mesa{
+        position: fixed;
+        left: 25vh;
+        width: 210px;
+    }
+
+    h1{
+        position: fixed;
+        left: 6vh;
+           
+    }
+
+    h2{
+        position: fixed;
+        left: 5vh;
+        top: 40vh;
+        width: 250px;
+    }
+
+    .botones{
+        position: fixed;
+        top: 53vh;
+        left:6.5vh;
+    }
+
+    .seccion_apuesta{
+        position: fixed;
+        left: 0.8vh;
+        top: 59vh;
+    }
+
+    .dinero_apuesta{
+        font-size: 18px;
+    }
+
+    .dinero_restante{
+        position: fixed;
+        left: 4.5vh;
+        font-size: 22px;
+    }
+
+    .mensaje.ganar{
+        position: fixed;
+        left: 7vh;
+        top: 36vh;
+    }
+
+    .mensaje.perder{
+        position: fixed;
+        left: -1vh;
+    }
+
+    .seccion_apuesta{
+        position: fixed;
+        left: -2.7vh;
+    }
+
+
 }
