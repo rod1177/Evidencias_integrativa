@@ -10,6 +10,9 @@ body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   background-attachment: fixed;
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -40,16 +43,19 @@ header {
 }
 
 .principal {
+  flex: 1;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  align-items: center;
+  padding: 0.5rem;
 }
 
 .tarjetas {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
-  width: 90%;
+  width: 100%;
   max-width: 950px;
 }
 
@@ -57,10 +63,10 @@ header {
   border-radius: 1rem;
   overflow: hidden;
   width: 280px;
-  height: 120px;
-  transition: all 0.8s ease;
+  height: 110px;
+  transition: all 0.6s ease-in-out;
   position: relative;
-  padding: 1rem;
+  padding: 0.5rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(0, 255, 157, 0.4);
   box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
@@ -83,7 +89,8 @@ header {
 }
 
 .tarjeta:hover {
-  width: 100%;
+  width: 90%;
+  max-width: 900px;
   height: 220px;
   background: rgba(0, 255, 157, 0.1);
   box-shadow:
@@ -151,26 +158,134 @@ p {
   text-decoration: none;
 }
 
-.github{
+.github {
   width: 20px;
   height: auto;
   text-align: right;
 }
+
 .boton:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(0, 255, 157, 0.7);
 }
 
+footer {
+  text-align: center;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 255, 157, 0.3);
+  border-top: 2px solid rgba(0, 255, 255, 0.3);
+  letter-spacing: 10px;
+  font-size: 18px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: #00ffe0;
+  text-shadow:
+    0 0 5px #00ffe0,
+    0 0 10px #00ffe0,
+    0 0 20px #00ffe0,
+    0 0 40px #00b3ff;
+  animation: parpadeo 2s infinite alternate;
+}
+
+footer h3 {
+  margin-top: 10px;
+  letter-spacing: normal;
+  font-size: 10px;
+}
+
+
 @media (max-width: 768px) {
+
+  header{
+    padding: 1em;
+  }
+
+
+  .titulo-neon{
+    font-size: 30px;
+  }
+
+  .tarjetas {
+    gap: 0.5rem;
+  }
+
+  .tarjeta {
+    width: 280px;
+    height: 105px;
+  }
+
+
+
+  .tarjeta:hover {
+    height: auto;
+  }
+
   .contenido {
     flex-direction: column;
   }
 
   .imagen {
-    width: 100%;
+    width: 50%;
+  }
+}
+
+@media (min-width:2560px){
+
+  header{
+    padding: 4em;
+  }
+
+  .titulo-neon{
+    font-size: 65px;
+  }
+
+
+  .tarjeta{
+    width: 700px;
+    height: 250px;
+    font-size: 42px;
+  }
+
+  .tarjeta p{
+    font-size: 28px;
+  }
+
+  .botones{
+    gap: 2em;
+  }
+
+  .boton{
+    padding: 0.8em 1em;
+    font-size: 25px;
   }
 
   .tarjeta:hover {
-    height: auto;
+  max-width: 1700px;
+  height: 280px;
+  width: 1100px;
+  background: rgba(0, 255, 157, 0.1);
+  box-shadow:
+    0 0 25px rgba(0, 255, 157, 0.7),
+    0 0 50px rgba(0, 255, 255, 0.3);
+}
+
+  .tarjetas{
+    gap: 1em;
+  }
+
+  footer{
+    padding: 1em;
+    font-size: 40px;
+  }
+
+  footer h3{
+    font-size: 20px;
   }
 }
